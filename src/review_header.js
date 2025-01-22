@@ -1,15 +1,15 @@
 import {Link}  from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import {GoogleLogout} from 'react-google-login';
-import { gapi } from 'gapi-script';
+import { useState } from 'react';
+import { googleLogout } from '@react-oauth/google';
 
 const clientId = "925306536966-8krnsg2kdor08se5s6d47vla1pec5f2f.apps.googleusercontent.com";
 const Reviewheader = () =>{
 
-  const logout = () =>{
-    window.localStorage.clear();
-    window.location.href="http://localhost:3000/#/"; // it will go to dashboard
-    window.location.reload(); // it will reload the app. js(window) file
+  const logout = () => {
+    googleLogout(); // Perform Google logout
+    window.localStorage.clear(); // Clear localStorage
+    window.location.href = "https://feedback-portal-t6lj.onrender.com/#/"; // Redirect to dashboard
+    window.location.reload(); // Reload the app
   }
   
     let[isHidden, setIsHidden] = useState(true);
