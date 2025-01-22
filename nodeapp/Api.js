@@ -15,7 +15,7 @@ const cors = require('cors'); // calling cross origin library
 
 const allowedOrigins = [
   "http://localhost:3000", // Local development
-  "https://note-management-system-yrlw.onrender.com" // Hosted frontend
+  "https://feedback-portal-t6lj.onrender.com" // Hosted frontend
 ];
 
 app.use(
