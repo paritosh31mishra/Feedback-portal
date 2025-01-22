@@ -4,15 +4,36 @@ const CATEGORY_ALL = "all";
 const CATEGORY_PRICING = "pricing";
 const CATEGORY_FEATURE = "feature";
 const CATEGORY_USABILITY = "usability";
-const express = require("express"); //calling express framework
-const app = express(); // creating object of express
-const cors = require("cors"); // calling cross origin library // creating object of cors library
-app.use(express.json()); // injecting .json to send and receive in json format, it allow to send and receive json data
+
+//express downloading code
+const express = require('express');
+const app = express();
+
+// use cross origin for frontend-backend communication
+const cors = require('cors'); // calling cross origin library
+
+
+const allowedOrigins = [
+  "http://localhost:3000", // Local development
+  "https://note-management-system-yrlw.onrender.com" // Hosted frontend
+];
+
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true); // Allow the request
+      } else {
+        callback(new Error("Not allowed by CORS")); // Block the request
+      }
+    },
+    credentials: true, // Include credentials (if needed)
   })
 );
+
+app.use(express.json());
+
+
 
 app.get("/getreviews", function (req, res) {
   const category = req.query.category;
