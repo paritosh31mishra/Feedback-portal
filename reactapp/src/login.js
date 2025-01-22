@@ -10,7 +10,7 @@ const Login = () =>{
      localStorage.setItem ("userid", res.profileObj.googleId);
      // here we store login details in the chrome local storage so that we can login
      localStorage.setItem("fullname", res.profileObj.name);
-     window.location.href="http://localhost:3000/#/"
+     window.location.href="https://feedback-portal-t6lj.onrender.com/#/"
    window.location.reload();// Reload the page(app.js) after login is success
     
   }
