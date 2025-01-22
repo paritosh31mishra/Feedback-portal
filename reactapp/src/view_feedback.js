@@ -6,7 +6,7 @@ const Viewfeedback = () => {
 
 
   const getAllreview = () => {
-    fetch("http://localhost:5556/getreviews?category=all")
+    fetch("https://feedback-portal-backend-l7z5.onrender.com/getreviews?category=all")
       .then((response) => response.json())
       .then((reviewarray) => {
         updatecategory(reviewarray);
@@ -15,7 +15,7 @@ const Viewfeedback = () => {
 
 
   const getfeature = () => {
-    fetch("http://localhost:5556/getreviews?category=Feature")
+    fetch("https://feedback-portal-backend-l7z5.onrender.com/getreviews?category=Feature")
     .then((response) => response.json())
     .then((reviewarray) => {
       updatecategory(reviewarray);
@@ -23,7 +23,7 @@ const Viewfeedback = () => {
   };
 
   const getpricing = () => {
-    fetch("http://localhost:5556/getreviews?category=Pricing")
+    fetch("https://feedback-portal-backend-l7z5.onrender.com/getreviews?category=Pricing")
     .then((response) => response.json())
     .then((reviewarray) => {
       updatecategory(reviewarray);
@@ -31,7 +31,7 @@ const Viewfeedback = () => {
   };
 
   const getusability = () => {
-    fetch("http://localhost:5556/getreviews?category=Usability")
+    fetch("https://feedback-portal-backend-l7z5.onrender.com/getreviews?category=Usability")
     .then((response) => response.json())
     .then((reviewarray) => {
       updatecategory(reviewarray);
