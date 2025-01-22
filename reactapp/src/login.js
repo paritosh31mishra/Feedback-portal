@@ -1,4 +1,4 @@
-import { GoogleLogin }  from 'react-google-login';
+import { googleLogout } from '@react-oauth/google';
 import Fbportal from './feedback_portal';
 
 const oAuthKey = "925306536966-8krnsg2kdor08se5s6d47vla1pec5f2f.apps.googleusercontent.com";
